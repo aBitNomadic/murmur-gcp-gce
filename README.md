@@ -2,11 +2,11 @@
 A murmur server designed for easy deployment to Google Cloud Platform:Google Compute Engine f1-micro
 
 # Setup
-Start a Google Compute Engine 
-Select "Deploy a container image to this VM instance."
-Use GCE GCE f1-micro container settings below. Replace (your username) in mount paths.
-Edit murmur.ini in /home/(your username)/mumble with your settings
-Restart your docker container
+1. Start a Google Compute Engine 
+2. Select "Deploy a container image to this VM instance."
+3. Use GCE GCE f1-micro container settings below. Replace (your username) in mount paths.
+4. Edit murmur.ini in /home/(your username)/mumble with your settings
+5. Restart your docker container
 
 # Current GCE f1-micro container settings
 ```
