@@ -1,13 +1,15 @@
 #!/bin/sh
 
-if [ ! -f /opt/mumble/murmur.ini ]
+if [ ! -f /opt/mumble/data/murmur.ini ]
 then
   tar -xjvf /${MUMBLE_FILE} --strip-components=1 -C /opt/mumble
+  mv /opt/mumble/murmur.ini /opt/mumble/data/murmur.ini
   chown -R mumble:mumble /opt/mumble
-  echo Changing murmur run user to mumble
-  sed -i 's/#uname=/uname=mumble/g' /opt/mumble/murmur.ini
+  echo Changing murmur run user to mumble and setting database location
+  sed -i 's/database=/database=/opt/mumble/data//g' /opt/mumble/data/murmur.ini
+  sed -i 's/#uname=/uname=mumble/g' /opt/mumble/data/murmur.ini
   echo Extracted mumble server. Please edit murmur.ini and restart container/server.
 fi
 
 echo Server starting
-/opt/mumble/murmur.x86 -fg -ini /opt/mumble/murmur.ini
+/opt/mumble/murmur.x86 -fg -ini /opt/mumble/data/murmur.ini

@@ -29,7 +29,7 @@ ADD start.sh /tmp/start.sh
 RUN chmod 755 /tmp/start.sh
 
 # Set volumes
-VOLUME /opt/mumble
+VOLUME /opt/mumble/data
 
 # Entrypoint to extract mumble if not on server
 ENTRYPOINT ["/tmp/start.sh"]
