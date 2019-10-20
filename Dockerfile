@@ -10,7 +10,7 @@ ARG MUMBLE_URL=https://github.com/mumble-voip/mumble/releases/download/${MUMBLE_
 RUN mkdir -pv /opt/mumble
 
 # Create non-root user
-RUN adduser -DHs /sbin/nologin mumble
+RUN adduser -r -s /sbin/nologin mumble
 
 # Install dependencies, fetch Mumble bzip archive and chown files, Add stackdriver monitoring and logging
 RUN yum update \
