@@ -1,5 +1,5 @@
 #live on the edge
-FROM ubi:latest
+FROM ubi8/ubi:latest
 MAINTAINER abitnomadic <abitnomadic01@Cgmail.com>
 
 ARG MUMBLE_VERSION=1.3.0
