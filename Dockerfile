@@ -1,5 +1,5 @@
 #live on the edge
-FROM alpine:latest
+FROM ubi:latest
 MAINTAINER abitnomadic <abitnomadic01@Cgmail.com>
 
 ARG MUMBLE_VERSION=1.3.0
@@ -13,13 +13,12 @@ RUN mkdir -pv /opt/mumble
 RUN adduser -DHs /sbin/nologin mumble
 
 # Install dependencies, fetch Mumble bzip archive and chown files, Add stackdriver monitoring and logging
-RUN apk add --update ca-certificates bzip2 tar tzdata wget curl \
+RUN yum update \
     && wget -q ${MUMBLE_URL} \
     && curl -sSO https://dl.google.com/cloudagents/install-monitoring-agent.sh \
     && curl -sSO https://dl.google.com/cloudagents/install-logging-agent.sh \
     && bash install-monitoring-agent.sh \
     && bash install-logging-agent.sh \
-    && apk del ca-certificates wget && rm -rf /var/cache/apk/* \
     && chown -R mumble:mumble /opt/mumble
 
 # Expose port
