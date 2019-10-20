@@ -14,7 +14,7 @@ RUN adduser -r -s /sbin/nologin mumble
 
 # Install dependencies, fetch Mumble bzip archive and chown files, Add stackdriver monitoring and logging
 RUN yum update -y \
-    && wget -q ${MUMBLE_URL} \
+    && curl -sSO ${MUMBLE_URL} \
     && curl -sSO https://dl.google.com/cloudagents/install-monitoring-agent.sh \
     && curl -sSO https://dl.google.com/cloudagents/install-logging-agent.sh \
     && bash install-monitoring-agent.sh \
