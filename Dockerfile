@@ -1,5 +1,5 @@
 #live on the edge
-FROM registry.access.redhat.com/ubi8/ubi:latest
+FROM registry.access.redhat.com/ubi8/ubi-init:latest
 MAINTAINER abitnomadic <abitnomadic01@Cgmail.com>
 
 ARG MUMBLE_VERSION=1.3.0
