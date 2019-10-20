@@ -1,6 +1,6 @@
 #live on the edge
 FROM registry.access.redhat.com/ubi8/ubi-init:latest
-MAINTAINER abitnomadic <abitnomadic01@Cgmail.com>
+MAINTAINER abitnomadic <abitnomadic01@gmail.com>
 
 ARG MUMBLE_VERSION=1.3.0
 ENV MUMBLE_FILE=murmur-static_x86-${MUMBLE_VERSION}.tar.bz2
@@ -15,10 +15,6 @@ RUN adduser -r -s /sbin/nologin mumble
 # Install dependencies, fetch Mumble bzip archive and chown files, Add stackdriver monitoring and logging
 RUN yum update -y \
     && curl -sSO ${MUMBLE_URL} \
-    && curl -sSO https://dl.google.com/cloudagents/install-monitoring-agent.sh \
-    && curl -sSO https://dl.google.com/cloudagents/install-logging-agent.sh \
-    && bash install-monitoring-agent.sh \
-    && bash install-logging-agent.sh \
     && chown -R mumble:mumble /opt/mumble
 
 # Expose port
