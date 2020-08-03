@@ -22,8 +22,8 @@ RUN apk add --update ca-certificates bzip2 tar tzdata wget \
 EXPOSE 64738
 
 # Add the start script
-ADD start.sh /tmp/start.sh
-RUN chmod 755 /tmp/start.sh
+ADD scripts/ /tmp/
+RUN chmod 755 /tmp/*
 
 # Set volumes
 VOLUME /opt/mumble/data
