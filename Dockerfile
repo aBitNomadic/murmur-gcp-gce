@@ -2,7 +2,7 @@
 FROM alpine:latest
 MAINTAINER abitnomadic <abitnomadic01@Cgmail.com>
 
-ARG MUMBLE_VERSION=1.2.19
+ARG MUMBLE_VERSION=1.3.2
 ENV MUMBLE_FILE=murmur-static_x86-${MUMBLE_VERSION}.tar.bz2
 ARG MUMBLE_URL=https://github.com/mumble-voip/mumble/releases/download/${MUMBLE_VERSION}/${MUMBLE_FILE}
 
