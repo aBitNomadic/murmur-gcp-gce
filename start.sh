@@ -15,6 +15,7 @@ fi
 echo Server starting
 if [ ! -z "$SPW" ]
 then
+  /opt/mumble/murmur.x86 -fg -ini /opt/mumble/data/murmur.ini &
   /opt/mumble/murmur.x86 -fg -ini /opt/mumble/data/murmur.ini -supw "$SPW"
 else
   /opt/mumble/murmur.x86 -fg -ini /opt/mumble/data/murmur.ini
