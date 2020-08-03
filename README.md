@@ -1,6 +1,8 @@
 # murmur-gcp-gce
 A murmur server designed for easy deployment to Google Cloud Platform:Google Compute Engine f1-micro
 
+Please make sure you mount the /opt/mumble/data dir from the container so you dont lose your data on server reboot
+
 # Setup
 1. Start a Google Compute Engine 
 2. Select "Deploy a container image to this VM instance."
@@ -8,6 +10,7 @@ A murmur server designed for easy deployment to Google Cloud Platform:Google Com
 4. Edit murmur.ini in /home/(your username)/mumble with your settings
 5. Restart your docker container
 
+You can set SUPW env var to set the super user password
 # Current GCE f1-micro container settings
 ```
 Container image
@@ -30,7 +33,7 @@ Arguments
 not specified
 
 Environment variables
-not specified
+optional SUPW:(Your super user password)
 
 Host directory mounts
 Mount path	Host path	Mode
