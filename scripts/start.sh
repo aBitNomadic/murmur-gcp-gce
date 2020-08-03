@@ -15,7 +15,7 @@ fi
 if [ ! -z "$SPW" ]
 then
   echo "Updating Superuser password"
-  /tmp/update-super-user.sh 
+  /tmp/update-super-user.sh &
 fi
 
 echo Server starting
