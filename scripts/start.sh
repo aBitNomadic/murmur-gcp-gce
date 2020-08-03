@@ -12,12 +12,11 @@ then
   echo Extracted mumble server. Please edit murmur.ini and restart container/server.
 fi
 
-echo Server starting
 if [ ! -z "$SPW" ]
 then
-  #im not proud of this, if anyones got a better idea please let me know
-  /tmp/update-super-user.sh &
-  /opt/mumble/murmur.x86 -fg -ini /opt/mumble/data/murmur.ini
-else
-  /opt/mumble/murmur.x86 -fg -ini /opt/mumble/data/murmur.ini
+  echo "Updating Superuser password"
+  /tmp/update-super-user.sh 
 fi
+
+echo Server starting
+/opt/mumble/murmur.x86 -fg -ini /opt/mumble/data/murmur.ini

@@ -11,4 +11,4 @@ done
 echo "Done waiting for murmur to start, Sleep for a few seconds to let it get set up"
 sleep 3
 
-/opt/mumble/murmur.x86 -supw "$SPW"
+/opt/mumble/murmur.x86 -ini /opt/mumble/data/murmur.ini -supw "$SPW"
