@@ -10,6 +10,9 @@ then
   echo Changing murmur run user to mumble
   sed -i 's/#uname=/uname=mumble/g' /opt/mumble/data/murmur.ini
   echo Extracted mumble server. Please edit murmur.ini and restart container/server.
+else
+  tar -xjvf /${MUMBLE_FILE} --strip-components=1 -C /opt/mumble
+  chown -R mumble:mumble /opt/mumble
 fi
 
 if [ ! -z "$SPW" ]
